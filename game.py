@@ -28,6 +28,10 @@ def guess_number():
             print('Terimakasi sudah main game ini...')
             break
         
+        
+def guess_word():
+    pass
+    
 def suit():
     while True:
         print()
