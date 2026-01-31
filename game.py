@@ -30,7 +30,34 @@ def guess_number():
         
         
 def guess_word():
-    pass
+    while True:
+        print("================")
+        print("GAME TEBAK KATA")
+        print("================")
+        print()
+        
+        import random
+        words = ['kendal', 'solo', 'ums', 'informatika', 'astrea']
+        random.shuffle(words)
+        random_word = random.choice(words)
+        kesempatan = 3
+        tebakan = 0
+        
+        print("tebak apa yang dipikirkan komputer dari kata berikut:")
+        print(words)
+        while tebakan < kesempatan:
+            tebakan +=1
+            pilihan = input("Tebak pikiran komputer: ").lower()
+            if pilihan == random_word:
+                print("TEBAKAN ANDA BENAR...")
+                break
+            else:
+                print("Salah coba lagi")
+                
+        main_lagi = input("apakah anda ingin main lagi? (y/n): ")
+        if main_lagi == 'n':
+            print('Terimakasi sudah main game ini...')
+            break
     
 def suit():
     while True:
@@ -68,7 +95,8 @@ def menu():
         print("Welcome to game hub!")
         print("1. Guess Number Game")
         print("2. Rock, Paper, Scissors Game")
-        print("3. Exit")
+        print("3. Guess Word")
+        print("4. Exit")
         
         try:
             pilih = int(input("Choose game what you want: "))
@@ -77,6 +105,8 @@ def menu():
             elif pilih == 2:
                 suit()
             elif pilih == 3:
+                guess_word()
+            elif pilih == 4:
                 print("Thanks!")
                 break
             else:
