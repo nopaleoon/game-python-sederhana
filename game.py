@@ -2,7 +2,7 @@ def guess_number():
     while True:
         print()
         print("===================================")
-        print("Selamat Datang di game tebak angka")
+        print("SELAMAT DATANG DI GAME TEBAK ANGKA")
         print("===================================")
 
         import random
@@ -32,7 +32,7 @@ def guess_number():
 def guess_word():
     while True:
         print("================")
-        print("GAME TEBAK KATA")
+        print("SELAMAT DATANG DI GAME TEBAK KATA")
         print("================")
         print()
         
@@ -63,7 +63,7 @@ def suit():
     while True:
         print()
         print("============================")
-        print("GAME BATU GUNTING KERTAS")
+        print("SELAMAT DATANG DI GAME BATU GUNTING KERTAS")
         print("============================")
         import random
         suit = ['batu', 'gunting', 'kertas']
@@ -90,13 +90,48 @@ def suit():
             print("terimakasih telah bermain!")
             break
         
+def mad_libs():
+    while True:
+        print("=============================")
+        print("SELAMAT DATANG DI GAME MAD LIBS")
+        print("=============================")
+        print("Masukkan kata/kalimat yang tepat untuk melengkapi peribahasa berikut:")
+        print()
+        
+        skor = 0
+        
+        peribahasa = {
+            "Seperti pinang dibelah" : "dua",
+            "Air beriak tanda" : "tidak dalam",
+            "Besar .... daripada tiang" : "pasak",
+            "Ada gula ada" : "semut",
+            "Ada udang di balik" : "batu"
+        }
+
+        for soal, jawaban in peribahasa.items():
+            print(f"{soal} = ")
+            user_input = input("Masukan jawaban: ").lower()
+            if user_input == jawaban:
+                print("Jawaban Anda benar!")
+                skor += 10
+            else:
+                print(f'Kurang tepat, jawaban yang benar adalah => {jawaban}')
+        
+        print(f"Skor Anda: {skor}")
+        play_again = input("apakah anda ingin main lagi? (y/n): ")
+        if play_again == 'n':
+            print('Terimakasi sudah main game ini...')
+            break
+        
 def menu():
     while True:
+        print()
         print("Welcome to game hub!")
         print("1. Guess Number Game")
         print("2. Rock, Paper, Scissors Game")
         print("3. Guess Word")
-        print("4. Exit")
+        print("4. Mad Libs")
+        print("5. Exit")
         
         try:
             pilih = int(input("Choose game what you want: "))
@@ -107,6 +142,8 @@ def menu():
             elif pilih == 3:
                 guess_word()
             elif pilih == 4:
+                mad_libs()    
+            elif pilih == 5:
                 print("Thanks!")
                 break
             else:
