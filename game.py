@@ -53,6 +53,8 @@ def guess_word():
                 break
             else:
                 print("Salah coba lagi")
+        else:
+            print(f"Maaf kesempatan anda habis, kata yang benar adalah {random_word}")
                 
         play_again = input("apakah anda ingin main lagi? (y/n): ")
         if play_again == 'n':
@@ -113,7 +115,7 @@ def mad_libs():
             user_input = input("Masukan jawaban: ").lower()
             if user_input == jawaban:
                 print("Jawaban Anda benar!")
-                skor += 10
+                skor += 20
             else:
                 print(f'Kurang tepat, jawaban yang benar adalah => {jawaban}')
         
@@ -142,12 +144,10 @@ def menu():
             elif pilih == 3:
                 guess_word()
             elif pilih == 4:
-                mad_libs()    
+                mad_libs()
             elif pilih == 5:
-                print("Thanks!")
+                print("Terima kasih telah bermain!")
                 break
-            else:
-                print("Pilihan tidak valid, silakan coba lagi.")
         except ValueError:
             print('pilih angka pada menu')
 menu()
