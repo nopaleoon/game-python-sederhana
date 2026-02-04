@@ -54,8 +54,8 @@ def guess_word():
             else:
                 print("Salah coba lagi")
                 
-        main_lagi = input("apakah anda ingin main lagi? (y/n): ")
-        if main_lagi == 'n':
+        play_again = input("apakah anda ingin main lagi? (y/n): ")
+        if play_again == 'n':
             print('Terimakasi sudah main game ini...')
             break
     
